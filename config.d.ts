@@ -1,19 +1,14 @@
-import { ServerOptions as HTTPSServerOptions } from "https";
+import type { ServerOptions as HttpsServerOptions } from "https";
+import type { ServerOptions as HttpServerOptions } from "http";
 
-declare const config: {
-    https?: {
-        enable?: false
-    } | {
-        enable: true
-        options: HTTPSServerOptions
-    }
-    
-    http?: {
-        enable?: false
-    } | {
-        enable: true
-        options: HTTPSServerOptions
-    }
+export type Config = {
+    protocol: "http";
+    options?: HttpServerOptions;
+} | {
+    protocol: "https";
+    options: HttpsServerOptions;
 };
+
+declare const config: Config;
 
 export default config;
