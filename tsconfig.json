@@ -1,20 +1,26 @@
 {
     "compilerOptions": {
-        "module"             : "ESNext",
+        "module"             : "NodeNext",
         "target"             : "ESNext",
         "strictFunctionTypes": true,
         "strict"             : true,
         "esModuleInterop"    : true,
-        "moduleResolution"   : "Node",
+        "moduleResolution"   : "NodeNext",
         "skipLibCheck"       : true,
         "outDir"             : "dist",
+        "rootDir"            : "src",
+        "resolveJsonModule"  : true,
         "sourceMap"          : true,
-        "inlineSourceMap"    : false,
-        "inlineSources"      : true,
         "declaration"        : true,
         "declarationMap"     : true,
         "declarationDir"     : "dist",
-        "importHelpers"      : true
+        "importHelpers"      : true,
+        "plugins"            : [
+            {
+                "transform": "typia/lib/transform"
+            }
+        ],
+        "strictNullChecks": true
     },
     "exclude": [
         "node_modules",
