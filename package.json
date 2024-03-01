@@ -4,6 +4,7 @@
   "description": "A custom, better msgroom server.",
   "type": "module",
   "main": "dist/index.js",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prestart": "npm run build",
