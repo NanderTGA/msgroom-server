@@ -1,34 +1,38 @@
-import config from "../config";
+import config from "../config.js";
 
 import { createServer as createHttpsServer } from "https";
 import { createServer as createHttpServer } from "http";
-const createServer = config.protocol == "https" ? createHttpsServer : createHttpServer;
-
-import { Server } from "socket.io";
+import { Server as SocketIOServer } from "socket.io";
 import express from "express";
 const app = express();
+const httpServer = config.protocol === "http"
+    ? ( config.options ? createHttpServer(config.options, app) : createHttpServer(app) )
+    : createHttpsServer(config.options, app);
 
-import type { ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData, Socket } from "./types/socket.io";
-import type { RawUser } from "msgroom/dist/types/socket.io";
-import generateID from "./utils/generateID";
+import type { ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData } from "./types/socket.io.js";
+import type { RawUser } from "msgroom/types/socket.io";
+import generateID from "./utils/generateID.js";
 
-const users: Record<string, RawUser> = {};
-const io = new Server<ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData>();
+import typia from "typia";
+import { transformValidationToString } from "./utils/validate.js";
 
-function authError(socket: Socket, reason: string) {
-    socket.emit("auth-error", { reason });
-}
+const COLORS = [ "#b38c16", "#2bb7b7", "#9c27b0", "#f44336", "#009688" ];
+const users = Object.create(null) as Record<string, RawUser>;
+const io = new SocketIOServer<ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData>();
 
 io.on("connection", socket => {
-    socket.on("auth", options => {
-        if (options.apikey) return authError(socket, "Apikeys and stuff is (not) in development");
-        if (!options.user) return authError(socket, "No nickname provided.");
-        if (options.user.length > 18) return authError(socket, "A nickname should not be longer than 18 characters");
+    const authError = (reason: string) => void socket.emit("auth-error", { reason });
+    const werror = (reason: string) => void socket.emit("werror", reason);
 
-        const userID = generateID(socket);
+    socket.on("auth", options => {
+        if (options.apikey) return void authError("Apikeys and stuff is (not) in development");
+        if (!options.user) return void authError("No nickname provided.");
+        if (options.user.length > 18) return void authError("A nickname should not be longer than 18 characters");
+
+        const userID = generateID(socket.conn.remoteAddress);
         for (const user in users) {
             if (user.startsWith(userID)) {
-                fuck(user)
+                //fuck(user)
             }
         }
 
@@ -37,15 +41,22 @@ io.on("connection", socket => {
         });
     
         socket.on("message", options => {
-            if (options.type != "text") return socket.emit("werror", `type should be equal to "text"`);
+            const validation = transformValidationToString(typia.validate(options));
+            if (validation) return void werror(validation);
+            
             io.emit("message", {
-                color: "#69420f",
-                content: options.content,
-                date: new Date(),
-                
-            })
-        })
+                color     : "#69420f",
+                content   : options.content,
+                date      : new Date().toISOString(),
+                id        : "69",
+                session_id: "69-1",
+                type      : "text",
+                user      : "you",
+            });
+        });
         
-        socket.emit("auth-complete", userID)
+        socket.emit("auth-complete", userID);
     });
 });
+
+app.use(express.static("public"));
