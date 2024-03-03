@@ -15,6 +15,7 @@ import generateID from "./utils/generateID.js";
 
 import typia from "typia";
 import { transformValidationToString } from "./utils/validate.js";
+import random from "random";
 
 const COLORS = [ "#b38c16", "#2bb7b7", "#9c27b0", "#f44336", "#009688" ];
 const users = Object.create(null) as Record<string, RawUser>;
@@ -30,11 +31,22 @@ io.on("connection", socket => {
         if (options.user.length > 18) return void authError("A nickname should not be longer than 18 characters");
 
         const userID = generateID(socket.conn.remoteAddress);
-        for (const user in users) {
-            if (user.startsWith(userID)) {
-                //fuck(user)
-            }
-        }
+        const sessionIDNumbers = Object.keys(users)
+            .filter( sessionID => sessionID.startsWith(userID) )
+            .map( sessionID => Number(sessionID.replace(userID + "-", "")) );
+        
+        let sessionIDNumber = Math.max(...sessionIDNumbers) + 1;
+        if (sessionIDNumber === -Infinity) sessionIDNumber = 0;
+        const sessionID = `${userID}-${sessionIDNumber}`;
+
+        const user: RawUser = {
+            id        : userID,
+            session_id: sessionID,
+            flags     : [],
+            user      : options.user,
+            color     : random.choice(COLORS) ?? COLORS[0],
+        };
+        users[sessionID] = user;
 
         socket.on("online", () => {
             socket.emit("online", Object.values(users));
@@ -55,7 +67,8 @@ io.on("connection", socket => {
             });
         });
         
-        socket.emit("auth-complete", userID);
+        socket.emit("auth-complete", userID, sessionID);
+        io.emit("user-join", user);
     });
 });
 
