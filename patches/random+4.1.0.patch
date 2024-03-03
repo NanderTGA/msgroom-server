@@ -1,0 +1,179 @@
+diff --git a/node_modules/random/dist/distributions/bates.d.ts b/node_modules/random/dist/distributions/bates.d.ts
+index 31bbf5a..d33a2a9 100644
+--- a/node_modules/random/dist/distributions/bates.d.ts
++++ b/node_modules/random/dist/distributions/bates.d.ts
+@@ -1,3 +1,3 @@
+-import { Random } from '../random';
++import { Random } from '../random.js';
+ declare const _default: (random: Random, n?: number) => () => number;
+ export default _default;
+diff --git a/node_modules/random/dist/distributions/bernoulli.d.ts b/node_modules/random/dist/distributions/bernoulli.d.ts
+index 5c736b3..7c3b81c 100644
+--- a/node_modules/random/dist/distributions/bernoulli.d.ts
++++ b/node_modules/random/dist/distributions/bernoulli.d.ts
+@@ -1,3 +1,3 @@
+-import { Random } from '../random';
++import { Random } from '../random.js';
+ declare const _default: (random: Random, p?: number) => () => number;
+ export default _default;
+diff --git a/node_modules/random/dist/distributions/binomial.d.ts b/node_modules/random/dist/distributions/binomial.d.ts
+index 787a79b..27aed2c 100644
+--- a/node_modules/random/dist/distributions/binomial.d.ts
++++ b/node_modules/random/dist/distributions/binomial.d.ts
+@@ -1,3 +1,3 @@
+-import { Random } from '../random';
++import { Random } from '../random.js';
+ declare const _default: (random: Random, n?: number, p?: number) => () => number;
+ export default _default;
+diff --git a/node_modules/random/dist/distributions/exponential.d.ts b/node_modules/random/dist/distributions/exponential.d.ts
+index 45784e8..6ff7681 100644
+--- a/node_modules/random/dist/distributions/exponential.d.ts
++++ b/node_modules/random/dist/distributions/exponential.d.ts
+@@ -1,3 +1,3 @@
+-import { Random } from '../random';
++import { Random } from '../random.js';
+ declare const _default: (random: Random, lambda?: number) => () => number;
+ export default _default;
+diff --git a/node_modules/random/dist/distributions/geometric.d.ts b/node_modules/random/dist/distributions/geometric.d.ts
+index 5c736b3..7c3b81c 100644
+--- a/node_modules/random/dist/distributions/geometric.d.ts
++++ b/node_modules/random/dist/distributions/geometric.d.ts
+@@ -1,3 +1,3 @@
+-import { Random } from '../random';
++import { Random } from '../random.js';
+ declare const _default: (random: Random, p?: number) => () => number;
+ export default _default;
+diff --git a/node_modules/random/dist/distributions/irwin-hall.d.ts b/node_modules/random/dist/distributions/irwin-hall.d.ts
+index 31bbf5a..d33a2a9 100644
+--- a/node_modules/random/dist/distributions/irwin-hall.d.ts
++++ b/node_modules/random/dist/distributions/irwin-hall.d.ts
+@@ -1,3 +1,3 @@
+-import { Random } from '../random';
++import { Random } from '../random.js';
+ declare const _default: (random: Random, n?: number) => () => number;
+ export default _default;
+diff --git a/node_modules/random/dist/distributions/log-normal.d.ts b/node_modules/random/dist/distributions/log-normal.d.ts
+index 11eb986..189e810 100644
+--- a/node_modules/random/dist/distributions/log-normal.d.ts
++++ b/node_modules/random/dist/distributions/log-normal.d.ts
+@@ -1,3 +1,3 @@
+-import { Random } from '../random';
++import { Random } from '../random.js';
+ declare const _default: (random: Random, mu?: number, sigma?: number) => () => number;
+ export default _default;
+diff --git a/node_modules/random/dist/distributions/normal.d.ts b/node_modules/random/dist/distributions/normal.d.ts
+index 11eb986..189e810 100644
+--- a/node_modules/random/dist/distributions/normal.d.ts
++++ b/node_modules/random/dist/distributions/normal.d.ts
+@@ -1,3 +1,3 @@
+-import { Random } from '../random';
++import { Random } from '../random.js';
+ declare const _default: (random: Random, mu?: number, sigma?: number) => () => number;
+ export default _default;
+diff --git a/node_modules/random/dist/distributions/pareto.d.ts b/node_modules/random/dist/distributions/pareto.d.ts
+index e361de8..1105074 100644
+--- a/node_modules/random/dist/distributions/pareto.d.ts
++++ b/node_modules/random/dist/distributions/pareto.d.ts
+@@ -1,3 +1,3 @@
+-import { Random } from '../random';
++import { Random } from '../random.js';
+ declare const _default: (random: Random, alpha?: number) => () => number;
+ export default _default;
+diff --git a/node_modules/random/dist/distributions/poisson.d.ts b/node_modules/random/dist/distributions/poisson.d.ts
+index 45784e8..6ff7681 100644
+--- a/node_modules/random/dist/distributions/poisson.d.ts
++++ b/node_modules/random/dist/distributions/poisson.d.ts
+@@ -1,3 +1,3 @@
+-import { Random } from '../random';
++import { Random } from '../random.js';
+ declare const _default: (random: Random, lambda?: number) => () => number;
+ export default _default;
+diff --git a/node_modules/random/dist/distributions/uniform-boolean.d.ts b/node_modules/random/dist/distributions/uniform-boolean.d.ts
+index b6d9f63..9b7395f 100644
+--- a/node_modules/random/dist/distributions/uniform-boolean.d.ts
++++ b/node_modules/random/dist/distributions/uniform-boolean.d.ts
+@@ -1,3 +1,3 @@
+-import { Random } from '../random';
++import { Random } from '../random.js';
+ declare const _default: (random: Random) => () => boolean;
+ export default _default;
+diff --git a/node_modules/random/dist/distributions/uniform-int.d.ts b/node_modules/random/dist/distributions/uniform-int.d.ts
+index ccb3fad..64dbb9a 100644
+--- a/node_modules/random/dist/distributions/uniform-int.d.ts
++++ b/node_modules/random/dist/distributions/uniform-int.d.ts
+@@ -1,3 +1,3 @@
+-import { Random } from '../random';
++import { Random } from '../random.js';
+ declare const _default: (random: Random, min?: number, max?: number) => () => number;
+ export default _default;
+diff --git a/node_modules/random/dist/distributions/uniform.d.ts b/node_modules/random/dist/distributions/uniform.d.ts
+index ccb3fad..64dbb9a 100644
+--- a/node_modules/random/dist/distributions/uniform.d.ts
++++ b/node_modules/random/dist/distributions/uniform.d.ts
+@@ -1,3 +1,3 @@
+-import { Random } from '../random';
++import { Random } from '../random.js';
+ declare const _default: (random: Random, min?: number, max?: number) => () => number;
+ export default _default;
+diff --git a/node_modules/random/dist/generators/function.d.ts b/node_modules/random/dist/generators/function.d.ts
+index f9c39e8..915a1f4 100644
+--- a/node_modules/random/dist/generators/function.d.ts
++++ b/node_modules/random/dist/generators/function.d.ts
+@@ -1,4 +1,4 @@
+-import RNG, { SeedFn } from '../rng';
++import RNG, { SeedFn } from '../rng.js';
+ export default class RNGFunction extends RNG {
+     _rng: SeedFn;
+     constructor(thunk: SeedFn, opts?: Record<string, unknown>);
+diff --git a/node_modules/random/dist/generators/math-random.d.ts b/node_modules/random/dist/generators/math-random.d.ts
+index cb11da4..918fa3d 100644
+--- a/node_modules/random/dist/generators/math-random.d.ts
++++ b/node_modules/random/dist/generators/math-random.d.ts
+@@ -1,4 +1,4 @@
+-import RNG from '../rng';
++import RNG from '../rng.js';
+ export default class RNGMathRandom extends RNG {
+     get name(): string;
+     next(): number;
+diff --git a/node_modules/random/dist/generators/xor128.d.ts b/node_modules/random/dist/generators/xor128.d.ts
+index 6049f05..7216560 100644
+--- a/node_modules/random/dist/generators/xor128.d.ts
++++ b/node_modules/random/dist/generators/xor128.d.ts
+@@ -1,4 +1,4 @@
+-import RNG from '../rng';
++import RNG from '../rng.js';
+ export default class RNGXOR128 extends RNG {
+     x: number;
+     y: number;
+diff --git a/node_modules/random/dist/index.d.ts b/node_modules/random/dist/index.d.ts
+index c02a8ea..dc75652 100644
+--- a/node_modules/random/dist/index.d.ts
++++ b/node_modules/random/dist/index.d.ts
+@@ -1,3 +1,3 @@
+-import random from './random';
+-export * from './random';
++import random from './random.js';
++export * from './random.js';
+ export default random;
+diff --git a/node_modules/random/dist/random.d.ts b/node_modules/random/dist/random.d.ts
+index 446169e..bac252a 100644
+--- a/node_modules/random/dist/random.d.ts
++++ b/node_modules/random/dist/random.d.ts
+@@ -1,5 +1,5 @@
+-import RNG from './rng';
+-import RNGFactory from './rng-factory';
++import RNG from './rng.js';
++import RNGFactory from './rng-factory.js';
+ /**
+  * Distribution function
+  */
+diff --git a/node_modules/random/dist/rng-factory.d.ts b/node_modules/random/dist/rng-factory.d.ts
+index 3b321fc..fabd86c 100644
+--- a/node_modules/random/dist/rng-factory.d.ts
++++ b/node_modules/random/dist/rng-factory.d.ts
+@@ -1,4 +1,4 @@
+-import RNG from './rng';
++import RNG from './rng.js';
+ /**
+  * Construct an RNG with variable inputs. Used in calls to Random constructor
+  * @param {...*} args - Distribution-specific arguments

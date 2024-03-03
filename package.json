@@ -10,7 +10,7 @@
     "prestart": "npm run build",
     "build": "rimraf dist && npx tsc",
     "start": "node .",
-    "prepare": "ts-patch install && typia patch"
+    "prepare": "patch-package && ts-patch install && typia patch"
   },
   "repository": {
     "type": "git",
