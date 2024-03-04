@@ -1,7 +1,7 @@
 import type { ServerOptions as HttpsServerOptions } from "https";
 import type { ServerOptions as HttpServerOptions } from "http";
 
-export type Config = {
+export type HttpConfig = {
     protocol: "http";
     options?: HttpServerOptions;
 } | {
@@ -9,6 +9,10 @@ export type Config = {
     options: HttpsServerOptions;
 };
 
-declare const config: Config;
+export interface Config {
+    port: number;
+    httpOptions: HttpConfig
+}
 
+declare const config: Config;
 export default config;
