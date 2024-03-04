@@ -24,6 +24,7 @@ const io = new SocketIOServer<ClientToServerEvents, ServerToClientEvents, InterS
 io.on("connection", socket => {
     const authError = (reason: string) => void socket.emit("auth-error", { reason });
     const werror = (reason: string) => void socket.emit("werror", reason);
+    const sysMessage = (type: "error" | "info" | "success", message: string, isHtml = false) => void socket.emit("sys-message", { type, message, isHtml });
 
     socket.on("auth", options => {
         if (options.apikey) return void authError("Apikeys and stuff is (not) in development");
@@ -66,7 +67,41 @@ io.on("connection", socket => {
                 user      : user.user,
             });
         });
+
+        socket.on("admin-action", options => {
+            const validation = transformValidationToString(typia.validate(options));
+            if (validation) return void werror(validation);
+            const { args } = options;
+
+            if (args[0] === "a") args.shift();
+            sysMessage("error", "aight bet");
+        });
+
+        socket.on("change-user", newNick => {
+            const validation = transformValidationToString(typia.validate(newNick));
+            if (validation) return void werror(validation);
+            if (newNick.length < 1 || newNick.length > 16) return void werror("A nickname should be 1-16 characters.");
+
+            const oldUser = user.user;
+            user.user = newNick;
+            io.emit("nick-changed", {
+                id        : userID,
+                oldUser,
+                newUser   : newNick,
+                session_id: sessionID,
+            });
+        });
         
+        socket.on("disconnect", () => {
+            // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
+            delete users[sessionID];
+            io.emit("user-leave", {
+                id        : userID,
+                session_id: sessionID,
+                user      : user.user,
+            });
+        });
+
         socket.emit("auth-complete", userID, sessionID);
         io.emit("user-join", user);
     });
