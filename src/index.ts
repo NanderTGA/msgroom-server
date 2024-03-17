@@ -47,6 +47,7 @@ io.on("connection", socket => {
             user      : options.user,
             color     : random.choice(COLORS) ?? COLORS[0],
         };
+        if (options.bot === true) user.flags.push("bot");
         users[sessionID] = user;
 
         socket.on("online", () => {
