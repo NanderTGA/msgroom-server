@@ -22,7 +22,6 @@ const md = new MarkdownIt("zero", {
     breaks     : true,
     linkify    : true,
     typographer: true,
-
 })
     .enable([ "strikethrough", "link", "linkify", "emphasis", "escape" ]);
 // eslint-disable-next-line no-multi-assign
