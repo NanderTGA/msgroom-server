@@ -1,15 +1,15 @@
 /*  copyright windows 96 team 2020  */
 
 a {
-    cursor: url(cursors/hand.cur) 6 0, auto;
+    cursor: url(/cursors/hand.cur) 6 0, auto;
 }
 
 select {
-    cursor: url(cursors/default.png), auto;
+    cursor: url(/cursors/default.png), auto;
 }
 
 input[type="text"] {
-    cursor: url(cursors/i-beam.png) 4 9, auto;
+    cursor: url(/cursors/i-beam.png) 4 9, auto;
 }
 
 .taskbar {
@@ -68,12 +68,12 @@ input[type="text"] {
     margin-left: 2px;
     margin-right: 2px;
     display: inline-block;
-    background: url(shell/start_here.png);
+    background: url(/shell/start_here.png);
     width: 54px;
 }
 
 .sb-active {
-    background: url(shell/start_here_active.png);
+    background: url(/shell/start_here_active.png);
 }
 
 .os_container {
@@ -120,7 +120,7 @@ input[type="text"] {
     height: 24px;
     padding: 4px;
     color:black;
-    cursor: url(cursors/hand.cur) 6 0, auto;
+    cursor: url(/cursors/hand.cur) 6 0, auto;
 }
 
 .w96_sm_item:hover {
@@ -163,7 +163,7 @@ input[type="text"] {
     /* width: fit-content; */
     width: 70px;
     display: inline-block;
-    cursor: url(cursors/hand.cur) 6 0, auto;
+    cursor: url(/cursors/hand.cur) 6 0, auto;
     user-select: none;
 }
 
@@ -192,7 +192,7 @@ input[type="text"] {
     display: flex;
     height: 32px;
     width: 32px;
-    background: url(css/system36/resources/icons/find.png); /* todo allow icon changes and store desktop icons in json file (implement FS) */
+    background: url(/css/system36/resources/icons/find.png); /* todo allow icon changes and store desktop icons in json file (implement FS) */
     background-size: cover;
 }
 
@@ -243,7 +243,7 @@ input[type="text"] {
 .notify-icon {
     height: 16px;
     width: 16px;
-    background-image: url(system36/icons96/small/warn.png);
+    background-image: url(/system36/icons96/small/warn.png);
     background-size: contain;
     margin-right: 0px;
 }
@@ -312,9 +312,9 @@ input[type="text"] {
     font-size: 16px;
     padding: 3px;
     font-weight: 100;
-    cursor: url(cursors/move.png) 10 10, auto;
+    cursor: url(/cursors/move.png) 10 10, auto;
     line-height: 0.7em;
-    /* cursor: url(system36/resources/cursors/move) 10 10, auto; */
+    /* cursor: url(/system36/resources/cursors/move) 10 10, auto; */
 }
 
 .titlebar-title {
@@ -353,8 +353,8 @@ input[type="text"] {
     width: 16px;
     float: right;
     border-style: none;
-    background: url(shell/window-ui/close.png);
-    cursor: url(cursors/hand.cur) 6 0, auto;
+    background: url(/shell/window-ui/close.png);
+    cursor: url(/cursors/hand.cur) 6 0, auto;
     position: relative;
     /* top: -1px; */
     left: 1px;
@@ -373,7 +373,7 @@ input[type="text"] {
 }
 
 .titlebar-maxbutton {
-    cursor: url(cursors/hand.cur) 6 0, auto;
+    cursor: url(/cursors/hand.cur) 6 0, auto;
     position: relative;
     /* top: -1px; */
     left: 1px;
@@ -381,15 +381,15 @@ input[type="text"] {
     height: 14px;
     width: 18px;
     float: right;
-    background: url(shell/window-ui/maxbutton.png);
+    background: url(/shell/window-ui/maxbutton.png);
 }
 
 .titlebar-maxxed {
-    background: url(shell/window-ui/maxbutton_maxxed.png);
+    background: url(/shell/window-ui/maxbutton_maxxed.png);
 }
 
 .titlebar-minbutton {
-    cursor: url(cursors/hand.cur) 6 0, auto;
+    cursor: url(/cursors/hand.cur) 6 0, auto;
     position: relative;
     /* top: -1px; */
     left: 1px;
@@ -397,7 +397,7 @@ input[type="text"] {
     height: 14px;
     width: 16px;
     float: right;
-    background: url(shell/window-ui/minbutton.png);
+    background: url(/shell/window-ui/minbutton.png);
 }
 
 .window-html {
@@ -464,7 +464,7 @@ input[type="text"] {
     user-select: none;
     -moz-user-modify: none;
     -ms-user-select: none;
-    cursor: url(cursors/hand.cur) 6 0, auto;
+    cursor: url(/cursors/hand.cur) 6 0, auto;
     margin-right: 2px;
     vertical-align: top;
     height: calc(100% - 2px);
@@ -494,7 +494,7 @@ input[type="text"] {
 }
 
 .taskbar-task_active {
-    background-image: url(shell/task-active-bg.png);
+    background-image: url(/shell/task-active-bg.png);
     border-top: 1px solid #000;
     border-left: 1px solid #000;
     border-right: 1px solid #dfdfdf;
@@ -530,7 +530,7 @@ input[type="text"] {
     /* width: fit-content; */
     width: 70px;
     display: inline-block;
-    cursor: url(cursors/hand.cur) 6 0, auto;
+    cursor: url(/cursors/hand.cur) 6 0, auto;
     user-select: none;
 }
 
@@ -541,7 +541,7 @@ input[type="text"] {
     display: flex;
     height: 32px;
     width: 32px;
-    background: url(css/system36/icons96/folder.png);
+    background: url(/css/system36/icons96/folder.png);
     background-size: cover;
 }
 
@@ -586,7 +586,7 @@ input[type="text"] {
 }
 
 .w96-checkmark {
-    cursor: url(cursors/hand.cur) 6 0, auto;
+    cursor: url(/cursors/hand.cur) 6 0, auto;
     display: inline-block;
     height: 10px;
     border-width: 2px;
@@ -624,7 +624,7 @@ input[type="text"] {
     border-width: 1px;
     padding-left: 10px;
     padding-right: 10px;
-    cursor: url(cursors/hand.cur) 6 0, auto;
+    cursor: url(/cursors/hand.cur) 6 0, auto;
     border-bottom-color: black;
     border-right-color: black;
     border-top-color: white;
@@ -682,7 +682,7 @@ input[type="text"] {
 }
 
 .w96-tab-button {
-    cursor: url(cursors/hand.cur) 6 0, auto;
+    cursor: url(/cursors/hand.cur) 6 0, auto;
     border-style: outset;
     background-color: transparent;
     border-top-left-radius: 3px;
@@ -701,7 +701,7 @@ input[type="text"] {
 }
 
 .mbx-error-symbol {
-    background: url(icons96/dlgerror.png);
+    background: url(/icons96/dlgerror.png);
     height: 32px;
     width: 32px;
     position: relative;
@@ -710,7 +710,7 @@ input[type="text"] {
 }
 
 .mbx-info-symbol {
-    background: url(icons96/info.png);
+    background: url(/icons96/info.png);
     height: 32px;
     width: 32px;
     position: relative;
@@ -719,7 +719,7 @@ input[type="text"] {
 }
 
 .mbx-warning-symbol {
-    background: url(icons96/warning.png);
+    background: url(/icons96/warning.png);
     height: 32px;
     width: 32px;
     position: relative;
@@ -728,7 +728,7 @@ input[type="text"] {
 }
 
 .mbx-question-symbol {
-    background: url(icons96/question.png);
+    background: url(/icons96/question.png);
     height: 32px;
     width: 32px;
     position: relative;
@@ -804,7 +804,7 @@ input[type="text"] {
     padding-top: 2px;
     padding-bottom: 2px;
     padding-right: 32px;
-    cursor: url(cursors/hand.cur) 6 0, auto;
+    cursor: url(/cursors/hand.cur) 6 0, auto;
 }
 
 .menu-basic .menu-basic-options .menu-basic-option:hover {
@@ -829,19 +829,19 @@ input[type="text"] {
 }
 
 .buttonimg-up {
-    background-image: url(system36/resources/explorer/up.png);
+    background-image: url(/system36/resources/explorer/up.png);
 }
 
 .buttonimg-back {
-    background-image: url(system36/resources/explorer/back.png);
+    background-image: url(/system36/resources/explorer/back.png);
 }
 
 .buttonimg-forward {
-    background-image: url(system36/resources/explorer/forward.png);
+    background-image: url(/system36/resources/explorer/forward.png);
 }
 
 .buttonimg-go {
-    background-image: url(system36/resources/explorer/go.png);
+    background-image: url(/system36/resources/explorer/go.png);
 }
 
 .cmirror {
@@ -865,7 +865,7 @@ input[type="text"] {
 }
 
 .assistant {
-    background-image: url(system36/apps/assistant/skins/assistant0.png);
+    background-image: url(/system36/apps/assistant/skins/assistant0.png);
     height: 220px;
     width: 205px;
     background-size: cover;
@@ -902,7 +902,7 @@ input[type="text"] {
 }
 
 .movable {
-    cursor: url(cursors/hand.cur) 6 0, auto;
+    cursor: url(/cursors/hand.cur) 6 0, auto;
 }
 
 .dm-griditem:focus {
@@ -918,25 +918,25 @@ input[type="text"] {
     z-index: -1;
     height: 200px;
     width: 200px;
-    cursor: url(cursors/move.png) 10 10, auto;
+    cursor: url(/cursors/move.png) 10 10, auto;
     top: 10px;
     left: 10px;
 }
 
 .ui-resizable-e, .ui-resizable-w {
-    cursor: url(cursors/rsz_h.png) 10 4, auto !important;
+    cursor: url(/cursors/rsz_h.png) 10 4, auto !important;
 }
 
 .ui-resizable-s, .ui-resizable-n {
-    cursor: url(cursors/rsz_v.png) 4 10, auto !important;
+    cursor: url(/cursors/rsz_v.png) 4 10, auto !important;
 }
 
 .ui-resizable-se, .ui-resizable-nw {
-    cursor: url(cursors/rsz_d.png) 7 7, auto !important;
+    cursor: url(/cursors/rsz_d.png) 7 7, auto !important;
 }
 
 .ui-resizable-sw, .ui-resizable-ne {
-    cursor: url(cursors/rsz_d2.png) 7 7, auto !important;
+    cursor: url(/cursors/rsz_d2.png) 7 7, auto !important;
 }
 
 .desktop-gadget .ui-resizable-handle {
@@ -980,11 +980,11 @@ input[type="text"] {
 }
 
 .iv-button-image-center {
-    background-image: url(system36/resources/iviewer/center-image.png);
+    background-image: url(/system36/resources/iviewer/center-image.png);
 }
 
 .iv-button-image-zoom {
-    background-image: url(system36/resources/iviewer/zoom-image.png);
+    background-image: url(/system36/resources/iviewer/zoom-image.png);
 }
 
 .window-dlg.zoomIn {
@@ -1016,7 +1016,7 @@ input[type="text"] {
     -moz-user-select: none;
     -ms-user-select: none;
     -webkit-user-select: none;
-    cursor: url(system36/resources/cursors/hand.cur) 6 0, auto;
+    cursor: url(/system36/resources/cursors/hand.cur) 6 0, auto;
 }
 
 .menuitem-root-active {
@@ -1125,7 +1125,7 @@ input[type="text"] {
 .w96-logo-white-debug {
     height: 32px;
     width: 32px;
-    background-image: url(system36/gl_textures/debug/logo-dbg.png);
+    background-image: url(/system36/gl_textures/debug/logo-dbg.png);
 }
 
 .a96-visualization-container {
@@ -1182,15 +1182,15 @@ input[type="text"] {
 }
 
 .a96-button-pause {
-    background-image: url(system36/resources/amp96/pause.png);
+    background-image: url(/system36/resources/amp96/pause.png);
 }
 
 .a96-button-play {
-    background-image: url(system36/resources/amp96/play.png);
+    background-image: url(/system36/resources/amp96/play.png);
 }
 
 .a96-button-stop {
-    background-image: url(system36/resources/amp96/stop.png);
+    background-image: url(/system36/resources/amp96/stop.png);
 }
 
 .a96-volscroll {
@@ -1204,7 +1204,7 @@ input[type="text"] {
 .a96-volscroll .ui-slider-handle {
     width: 12px;
     box-shadow: inset 1px 1px #dfdfdf, 1px 0 #000, 0 1px #000, 1px 1px #000;
-    cursor: url(system36/resources/cursors/hand.cur) 6 0, auto;
+    cursor: url(/system36/resources/cursors/hand.cur) 6 0, auto;
     background-color: rgb(192,192,192);
     border-radius: 0px;
 }
@@ -1233,7 +1233,7 @@ input[type="text"] {
     margin: auto;
     width: 156px;
     height: 156px;
-    background: url(system36/icons96/warning_big.png);
+    background: url(/system36/icons96/warning_big.png);
     margin-top: 25px;
 }
 
@@ -1279,7 +1279,7 @@ input[type="text"] {
 
 .w96-progress-bar .progress {
     height: 9px;
-    background: url(css/system36/resources/shell/progress.png);
+    background: url(/css/system36/resources/shell/progress.png);
     image-rendering: pixelated;
 }
 
@@ -1300,7 +1300,7 @@ input[type="text"] {
 }
 
 .aboutbox-logo {
-    background: url(misc/logo-w96.png);
+    background: url(/misc/logo-w96.png);
     width: 100%;
     height: 60px;
     background-position: center;
@@ -1366,7 +1366,7 @@ input[type="text"] {
     border-width: 2px;
     border-top-color: rgb(128,128,128);
     border-left-color: rgb(128,128,128);
-    cursor: url(system36/resources/cursors/hand.cur) 6 0, auto;
+    cursor: url(/system36/resources/cursors/hand.cur) 6 0, auto;
     margin-top: auto;
     margin-bottom: auto;
 }
@@ -1378,7 +1378,7 @@ input[type="text"] {
 }
 
 .w96-chkbox .checked {
-    background-image: url(system36/resources/shell/checkbox.png);
+    background-image: url(/system36/resources/shell/checkbox.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -1506,7 +1506,7 @@ input[type="text"] {
     flex: 1;
     font-size: 12px;
     padding: 0px;
-    cursor: url(system36/resources/cursors/i-beam.png) 4 8, auto;
+    cursor: url(/system36/resources/cursors/i-beam.png) 4 8, auto;
 }
 
 .conjs-longstr {
@@ -1518,7 +1518,7 @@ input[type="text"] {
 .conjs-longstr:hover {
     background-color: aqua;
     color: black;
-    cursor: url(system36/resources/cursors/hand.cur) 6 0, auto;
+    cursor: url(/system36/resources/cursors/hand.cur) 6 0, auto;
 }
 
 .conjs-link {
@@ -1530,7 +1530,7 @@ input[type="text"] {
 .conjs-link:hover {
     background-color: greenyellow;
     color: black;
-    cursor: url(system36/resources/cursors/hand.cur) 6 0, auto;
+    cursor: url(/system36/resources/cursors/hand.cur) 6 0, auto;
 }
 
 .active-desktop {
@@ -1649,7 +1649,7 @@ input[type="text"] {
     width: 16px;
     margin-top: auto;
     margin-bottom: auto;
-    background: url(system36/icons96/small/folder.png);
+    background: url(/system36/icons96/small/folder.png);
 }
 
 .start-menu-item .text {
@@ -1708,7 +1708,7 @@ input[type="text"] {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url(system36/icons96/error.png);
+    background-image: url(/system36/icons96/error.png);
 }
 
 .image-text-lbitem .text {
@@ -1727,7 +1727,7 @@ input[type="text"] {
 }
 
 .pkicon-default {
-    background-image: url(system36/icons96/small/package.png);
+    background-image: url(/system36/icons96/small/package.png);
 }
 
 .pkg-di {
@@ -1793,7 +1793,7 @@ input[type="text"] {
 
 .icon-shortcut-emblem {
     height: 100%;
-    background: url(themes/default/icons/shortcut-emblem.png);
+    background: url(/themes/default/icons/shortcut-emblem.png);
     width: 100%;
     /* z-index: -1; */
     position: relative;
