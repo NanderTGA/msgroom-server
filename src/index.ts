@@ -17,7 +17,7 @@ import typia from "typia";
 import { transformValidationToString } from "./utils/validate.js";
 import random from "random";
 
-const COLORS = [ "#b38c16", "#2bb7b7", "#9c27b0", "#f44336", "#009688" ];
+const COLORS = [ "#b38c16", "#2bb7b7", "#9c27b0", "#f44336", "#009688", "#d13e33", "#2aa0a0", "#975f4a", "#c51f57", "#6565db" ];
 const users = Object.create(null) as Record<string, RawUser>;
 const io = new SocketIOServer<ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData>(httpServer);
 
