@@ -17,6 +17,17 @@ import typia from "typia";
 import { transformValidationToString } from "./utils/validate.js";
 import random from "random";
 
+import MarkdownIt from "markdown-it";
+const md = new MarkdownIt("zero", {
+    breaks     : true,
+    linkify    : true,
+    typographer: true,
+
+})
+    .enable([ "strikethrough", "link", "linkify", "emphasis", "escape" ]);
+// eslint-disable-next-line no-multi-assign
+md.renderer.rules.paragraph_open = md.renderer.rules.paragraph_close = () => "";
+
 const COLORS = [ "#b38c16", "#2bb7b7", "#9c27b0", "#f44336", "#009688", "#d13e33", "#2aa0a0", "#975f4a", "#c51f57", "#6565db" ];
 const users = Object.create(null) as Record<string, RawUser>;
 const io = new SocketIOServer<ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData>(httpServer);
@@ -57,10 +68,11 @@ io.on("connection", socket => {
         socket.on("message", options => {
             const validation = transformValidationToString(typia.validate(options));
             if (validation) return void werror(validation);
+            if (options.content.length > 2048 || options.content.length < 1) return void werror("A message should be 1-2048 characters.");
             
             io.emit("message", {
                 color     : user.color,
-                content   : options.content,
+                content   : md.render(options.content).trim(),
                 date      : new Date().toISOString(),
                 id        : userID,
                 session_id: sessionID,
