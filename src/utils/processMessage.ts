@@ -15,10 +15,14 @@ md.renderer.rules.paragraph_open = md.renderer.rules.paragraph_close = () => "";
  * @returns The processed message.
  */
 export default function processMessage(message: string): string {
-    return message
+    message = message
         .trim()
-        .split("\n")
-        .map( line => md.render(line) )
-        .join("\n")
+        .replaceAll("\n", "<BR />"); // very obscure thing nobody is gonna type in a message to prevent false positives + allows people to have newlines in their messages
+
+    message = md
+        .render(message)
+        .replaceAll("&lt;BR /&gt;", "\n") // markdown-it escapes html tags
         .trim();
+
+    return message;
 }
