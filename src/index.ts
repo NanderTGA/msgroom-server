@@ -41,12 +41,14 @@ io.on("connection", socket => {
         if (sessionIDNumber === -Infinity) sessionIDNumber = 0;
         const sessionID = `${userID}-${sessionIDNumber}`;
 
+        const color = Object.values(users).find( user => user.session_id.startsWith(userID) )?.color ?? random.choice(COLORS) ?? COLORS[0];
+        
         const user: RawUser = {
             id        : userID,
             session_id: sessionID,
             flags     : [],
             user      : options.user,
-            color     : random.choice(COLORS) ?? COLORS[0],
+            color,
         };
         if (options.bot === true) user.flags.push("bot");
         users[sessionID] = user;
