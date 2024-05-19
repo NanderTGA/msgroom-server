@@ -96,6 +96,7 @@ io.on("connection", socket => {
         });
         
         socket.on("disconnect", () => {
+            socket.disconnect(); // no more reconnection bs
             // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
             delete users[sessionID];
             io.emit("user-leave", {
@@ -113,3 +114,13 @@ io.on("connection", socket => {
 app.use(express.static("public"));
 
 httpServer.listen(config.port, () => void console.log(`Running on port ${config.port}!`));
+
+process.on("SIGINT", () => {
+    io.emit("sys-message", {
+        isHtml : true,
+        type   : "error",
+        message: "<h1>The server is closing, please refresh the window.</h1>",
+    });
+    io.disconnectSockets();
+    io.close( error => void process.exit(error ? 2 : 0) );
+});
