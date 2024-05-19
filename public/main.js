@@ -781,7 +781,7 @@
                 ));
             }),
             l.socket.on("message", function (e) {
-                if (r.current.blockedIds.includes(e.session_id)) return;
+                if (r.current.blockedIds.includes(e.id)) return;
                 const s = r.current.onlineUsers.find(
                     (s) => s.session_id == e.session_id,
                 );
