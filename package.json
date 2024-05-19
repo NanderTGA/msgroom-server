@@ -1,6 +1,6 @@
 {
   "name": "msgroom-server",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A custom, better msgroom server.",
   "type": "module",
   "main": "dist/index.js",
