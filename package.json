@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prestart": "npm run build",
     "build": "rimraf dist && npx tsc",
-    "start": "node .",
+    "start": "node --enable-source-maps .",
     "prepare": "patch-package && ts-patch install && typia patch"
   },
   "repository": {
