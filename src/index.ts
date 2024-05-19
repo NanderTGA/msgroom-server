@@ -12,20 +12,11 @@ const httpServer = config.httpOptions.protocol === "http"
 import type { ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData } from "./types/socket.io.js";
 import type { RawUser } from "msgroom/types/socket.io";
 import generateID from "./utils/generateID.js";
+import processMessage from "./utils/processMessage.js";
 
 import typia from "typia";
 import { transformValidationToString } from "./utils/validate.js";
 import random from "random";
-
-import MarkdownIt from "markdown-it";
-const md = new MarkdownIt("zero", {
-    breaks     : true,
-    linkify    : true,
-    typographer: true,
-})
-    .enable([ "strikethrough", "link", "linkify", "emphasis", "escape" ]);
-// eslint-disable-next-line no-multi-assign
-md.renderer.rules.paragraph_open = md.renderer.rules.paragraph_close = () => "";
 
 const COLORS = [ "#b38c16", "#2bb7b7", "#9c27b0", "#f44336", "#009688", "#d13e33", "#2aa0a0", "#975f4a", "#c51f57", "#6565db" ];
 const users = Object.create(null) as Record<string, RawUser>;
@@ -71,7 +62,7 @@ io.on("connection", socket => {
             
             io.emit("message", {
                 color     : user.color,
-                content   : md.render(options.content).trim(),
+                content   : processMessage(options.content),
                 date      : new Date().toISOString(),
                 id        : userID,
                 session_id: sessionID,
