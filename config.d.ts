@@ -11,7 +11,11 @@ export type HttpConfig = {
 
 export interface Config {
     port: number;
-    httpOptions: HttpConfig
+    httpOptions: HttpConfig;
+    ratelimits?: {
+        defaultTokens: number;
+        refreshAfterMs: number;
+    }
 }
 
 declare const config: Config;

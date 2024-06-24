@@ -4,4 +4,8 @@ export default {
     httpOptions: {
         protocol: "http",
     },
+    ratelimits: {
+        defaultTokens : 15,
+        refreshAfterMs: 20 * 1000,
+    },
 };

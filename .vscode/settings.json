@@ -5,6 +5,9 @@
         "linkify",
         "MIKESOFT",
         "msgroom",
+        "ratelimited",
+        "ratelimiting",
+        "ratelimits",
         "typia",
         "werror"
     ]
