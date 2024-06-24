@@ -31,7 +31,7 @@ io.on("connection", socket => {
     const werror = (reason: string) => void socket.emit("werror", reason);
     const sysMessage = (type: "error" | "info" | "success", message: string, isHtml = false) => void socket.emit("sys-message", { type, message, isHtml });
 
-    socket.on("auth", options => {
+    socket.once("auth", options => {
         if (options.apikey) return void authError("Apikeys and stuff is (not) in development");
         if (!options.user) return void authError("No nickname provided.");
         if (options.user.length > 18) return void authError("A nickname should not be longer than 18 characters");
